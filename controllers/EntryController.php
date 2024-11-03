@@ -18,7 +18,7 @@ class EntryController {
 
         // Simulação de entrada bem-sucedida
         // Aqui você pode incluir lógica adicional para manipular a entrada
-        return [true, "Entrada cadastrada com sucesso!"];
+        return [true, "Registro cadastrado com sucesso!"];
     }
 }
 ?>

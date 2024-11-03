@@ -1,8 +1,8 @@
 <?php
 session_start();
 require 'config/config.php';
-
 $auth = new AuthController();
+
 
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,10 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Verifica se o usuário está autenticado
 if ($auth->checkAuth()) {
-    include 'views/dashboard.php';
+    $page = $_GET['page'] ?? 'dashboard';
+
+    switch ($page) {
+        case 'acoes':
+            include 'views/acoes.php';
+            break;
+        case 'dashboard':
+        default:
+            include 'views/dashboard.php';
+            break;
+    }
 } else {
     include 'views/login.php';
 }
-?>

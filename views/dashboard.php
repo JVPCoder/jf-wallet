@@ -12,9 +12,20 @@
         }
     </script>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+<body class="bg-gray-100">
 
-    <div class="bg-white shadow-md rounded-lg w-full max-w-md p-6">
+    <header class="bg-green-500 text-white p-4">
+        <h1 class="text-3xl font-bold text-center">jf-wallet</h1>
+        <nav class="mt-2">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="<?= BASE_URL ?>/index.php?page=dashboard" class="hover:underline">Home</a></li>
+                <li><a href="<?= BASE_URL ?>/index.php?page=acoes" class="hover:underline">Ações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="bg-white m-auto mt-7 shadow-md rounded-lg w-full max-w-md p-6">
 
         <!-- Mensagem de Erro ou Sucesso -->
         <?php if (isset($_GET['error'])): ?>
@@ -27,7 +38,7 @@
             </div>
         <?php endif; ?>
 
-        <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Resumo Mensal de Entradas e Saídas</h2>
+        <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Resumo de Entradas e Saídas</h2>
         <ul class="mb-2">
             <?php
             // Exemplo de dados de transações
@@ -62,7 +73,7 @@
                     $formattedAmount = ($amount >= 0 ? "+ R$ " : "- R$ ") . number_format(abs($amount), 2, ',', '.');
 
                     echo "<li class='flex justify-between py-2 border-b {$colorClass}'>";
-                    echo "<span>{$transaction['description']}</span>";
+                    echo "<span><span class='cursor-pointer text-red-700'><i class='fa fa-times' aria-hidden='true'></i></span> {$transaction['description']}</span>";
                     echo "<span>{$formattedAmount}</span>";
                     echo "</li>";
                 }
