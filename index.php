@@ -1,15 +1,28 @@
 <?php
+session_start();
+require 'config/config.php';
 
-require_once __DIR__.'/core/Core.php';
-require_once __DIR__.'/router/routes.php';
+$auth = new AuthController();
 
-spl_autoload_register(function($file){
-    if (file_exists(__DIR__."/utils/$file.php")){
-        require_once __DIR__."/utils/$file.php";
-    } else if (file_exists(__DIR__."/models/$file.php")){
-        require_once __DIR__."/models/$file.php";
+// Verifica se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Recebe os dados do formulário
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+    
+    // Tenta fazer o login
+    $errorMessage = $auth->login($username, $password);
+
+    // Exibe mensagem de erro, se houver
+    if ($errorMessage) {
+        echo "<p style= 'color: red;'>$errorMessage</p>";
     }
-});
+}
 
-$core = new Core();
-$core->run($routes);
+// Verifica se o usuário está autenticado
+if ($auth->checkAuth()) {
+    include 'views/dashboard.php';
+} else {
+    include 'views/login.php';
+}
+?>
