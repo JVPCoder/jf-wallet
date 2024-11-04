@@ -15,7 +15,7 @@
 <body class="bg-gray-100">
 
     <header class="bg-green-500 text-white p-4">
-        <h1 class="text-3xl font-bold text-center">jf-wallet</h1>
+        <h1 class="text-3xl font-bold text-center"> <i class="fa-solid fa-wallet"></i> J&F Wallet </h1>
         <nav class="mt-2">
             <ul class="flex justify-center space-x-4">
                 <li><a href="<?= BASE_URL ?>/index.php?page=dashboard" class="hover:underline">Home</a></li>
@@ -86,9 +86,9 @@
 
         <!-- Exibir saldo total geral -->
         <div class='text-center font-bold mt-4'>
-            <?php 
-                $totalBalanceClass = $totalBalance >= 0 ? 'text-green-600' : 'text-red-600'; 
-                echo "<span class='{$totalBalanceClass}'>Saldo Total: R$ " . number_format($totalBalance, 2, ',', '.') . "</span>"; 
+            <?php
+                $totalBalanceClass = $totalBalance >= 0 ? 'text-green-600' : 'text-red-600';
+                echo "<span class='{$totalBalanceClass}'>Saldo Total: R$ " . number_format($totalBalance, 2, ',', '.') . "</span>";
             ?>
         </div>
 
@@ -115,7 +115,7 @@
     <!-- Modal para Nova Entrada -->
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center">
         <div class="bg-white rounded-lg p-6 w-full max-w-md">
-            <h2 class="text-xl font-semibold text-gray-700 mb-4">Cadastrar Nova Entrada</h2>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Cadastrar Nova</h2>
             <form action="newEntry.php" method="POST">
                 <div class="mb-4">
                     <label for="description" class="block text-gray-700">Descrição:</label>
