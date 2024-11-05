@@ -59,9 +59,19 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
 
 3. **Ligue o Apache e o MYSQL do XAMPP**
 
-4. **Acesse o banco de dados e crie uma database com nome "jf_db"**  
+4. **Acesse o banco de dados e crie uma database jf_db**:
+   ```bash
+   CREATE DATABASE jf_db;
+   ```
 
-5. **Após isso crie uma tabela "users" com os seguintes atributos: id(int 11, AI), email(varchar 50), password(varchar 30)**
+5. **Após isso crie uma tabela "users" com os seguintes atributos:**
+   ```bash
+   CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+    );
+   ```
 
 6. **Insira um novo usuário na tabela "users" seguindo os atributos mostrados. Exemplo:**
    ```bash
