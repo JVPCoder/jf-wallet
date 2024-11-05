@@ -75,5 +75,5 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
 
 ---
 
-##🛡️ Licença:
+## 🛡️ Licença:
 Esse software é licenciado através da MIT license.
