@@ -68,7 +68,7 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
    INSERT INTO `users`(`email`, `password`) VALUES ('admin','1234')
    ```   
 
-7. **Com o usuário criado no banco de dados já é possível acessar a aplicação:**
+7. **Com o usuário criado no banco de dados já é possível acessar a aplicação no seu navegador:**
    ```bash
    localhost/jf-wallet
    ```
