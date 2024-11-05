@@ -52,19 +52,14 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
    git clone https://github.com/JVPCoder/jf-wallet.git
    ```
 
-2. **Instale as Dependências:**
-   ```bash
-   npm install
-   ```
+2. **Ligue o Apache e o MYSQL do XAMPP**
 
-3. **Ligue o Apache e o MYSQL do XAMPP**
-
-4. **Acesse o banco de dados e crie uma database jf_db**:
+3. **Acesse o banco de dados e crie uma database jf_db**:
    ```bash
    CREATE DATABASE jf_db;
    ```
 
-5. **Após isso crie uma tabela "users" com os seguintes atributos:**
+4. **Após isso crie uma tabela "users" com os seguintes atributos:**
    ```bash
    CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -73,12 +68,12 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
     );
    ```
 
-6. **Insira um novo usuário na tabela "users" seguindo os atributos mostrados. Exemplo:**
+5. **Insira um novo usuário na tabela "users" seguindo os atributos mostrados. Exemplo:**
    ```bash
    INSERT INTO `users`(`email`, `password`) VALUES ('admin','1234')
    ```   
 
-7. **Com o usuário criado no banco de dados já é possível acessar a aplicação no seu navegador:**
+6. **Com o usuário criado no banco de dados já é possível acessar a aplicação no seu navegador:**
    ```bash
    localhost/jf-wallet
    ```
