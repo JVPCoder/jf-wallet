@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'config/config.php';
+error_reporting(E_ERROR | E_PARSE);
 $auth = new AuthController();
 
 
