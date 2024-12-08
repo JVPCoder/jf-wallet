@@ -80,7 +80,7 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
 
 5. **Insira um novo usuário na tabela "users" seguindo os atributos mostrados. Exemplo:**
    ```bash
-   INSERT INTO `users`(`email`, `password`) VALUES ('admin','1234')
+   INSERT INTO `users`(`email`, `password`) VALUES ('admin@admin.com','1234')
    ```   
 
 6. **Com o usuário criado no banco de dados já é possível acessar a aplicação no seu navegador:**
