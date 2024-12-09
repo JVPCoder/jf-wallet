@@ -67,6 +67,16 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
     password VARCHAR(255) NOT NULL
     );
    ```
+   E de transacoes:
+   ```bash
+   CREATE TABLE transacao (
+    transacao_id INT PRIMARY KEY,
+    descricao VARCHAR(255) NOT NULL,
+    valor FLOAT,
+    tipo VARCHAR(30),
+    data_transacao DATE DEFAULT NOW()
+   );
+   ```
 
 5. **Insira um novo usuário na tabela "users" seguindo os atributos mostrados. Exemplo:**
    ```bash

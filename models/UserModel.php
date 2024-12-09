@@ -1,32 +1,67 @@
 <?php
+    class UserModel {
+        private $id;
+        private $email;
+        private $password;
 
-require_once "models/Database.php";
-class UserModel extends Database {
-    private $pdo;
 
-    public function __construct() {
-        $this->pdo = $this->getConnection();
-    }
+        /**
+         * Get the value of id
+         */ 
+        public function getId()
+        {
+                return $this->id;
+        }
 
-    public function usersFetch() {
-        $stm = $this->pdo->query("SELECT * FROM users");
-        if ($stm->rowCount() > 0) {
-            return $stm->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            return [];
+        /**
+         * Set the value of id
+         *
+         * @return  self
+         */ 
+        public function setId($id)
+        {
+                $this->id = $id;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of email
+         */ 
+        public function getEmail()
+        {
+                return $this->email;
+        }
+
+        /**
+         * Set the value of email
+         *
+         * @return  self
+         */ 
+        public function setEmail($email)
+        {
+                $this->email = $email;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of senha
+         */ 
+        public function getSenha()
+        {
+                return $this->password;
+        }
+
+        /**
+         * Set the value of senha
+         *
+         * @return  self
+         */ 
+        public function setSenha($senha)
+        {
+                $this->password = $senha;
+
+                return $this;
         }
     }
-
-    public function fetchById($id) {
-        $stm = $this->pdo->prepare("SELECT * FROM users WHERE id = ?");
-        $stm->execute([$id]);
-        return $stm->fetch(PDO::FETCH_ASSOC);
-    }
-
-    // Novo método para buscar usuário pelo email
-    public function fetchByEmail($email) {
-        $stm = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
-        $stm->execute([$email]);
-        return $stm->fetch(PDO::FETCH_ASSOC);
-    }
-}
