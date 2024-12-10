@@ -4,7 +4,7 @@
         <nav class="mt-2">
             <ul class="flex justify-center space-x-4">
                 <li><a href="<?= BASE_URL ?>/transacao/listar" class="hover:underline">Transações</a></li>
-                <li><a href="<?= BASE_URL ?>/index.php?page=acoes" class="hover:underline">Ações</a></li>
+                <li><a href="<?= BASE_URL ?>/ativo/listar" class="hover:underline">Ações</a></li>
             </ul>
         </nav>
     </header>

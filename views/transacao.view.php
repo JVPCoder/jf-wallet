@@ -43,23 +43,23 @@
 
     <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Resumo de Entradas e Saídas</h2>
     <ul class="mb-2">
-        <?php 
+        <?php
             $saldoTotal = 0;
             foreach($transacoes as $mes => $transacoesMes) :
-                $totalMes = 0; 
+                $totalMes = 0;
                 setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'portuguese');
                 $nomeMes = ucfirst(strftime("%B %Y", strtotime($mes)));
         ?>
             <li class='font-semibold text-lg mt-4'><?= $nomeMes; ?></li>
-            <?php 
-                foreach($transacoesMes as $transacao): 
+            <?php
+                foreach($transacoesMes as $transacao):
                     $valor = $transacao->getValor();
                     $ehEntrada = $transacao->getTipo() === 'entrada';
                     $totalMes += $ehEntrada ? $valor : - $valor;
                     $saldoTotal += $ehEntrada ? $valor : - $valor;
                     $colorClass =  $ehEntrada ? 'text-green-600' : 'text-red-600';
                     $totalFormatado = ($ehEntrada ? "+ R$ " : "- R$ ") . number_format(abs($valor), 2, ',', '.');
-            ?>        
+            ?>
                 <li class='flex justify-between py-2 border-b <?=$colorClass?>'>
                     <span class='cursor-pointer text-red-700'>
                         <i class='fa fa-times' onclick=confirmarDelete(<?=$transacao->getTransacaoId()?>) aria-hidden='true'></i>
