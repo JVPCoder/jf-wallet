@@ -67,7 +67,7 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
     password VARCHAR(255) NOT NULL
     );
    ```
-   E de transacoes:
+   De transacoes:
    ```bash
    CREATE TABLE transacao (
     transacao_id INT PRIMARY KEY,
@@ -77,6 +77,20 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
     data_transacao DATE DEFAULT NOW()
    );
    ```
+   e de ativos:
+   ```bash
+    CREATE TABLE ativo (
+    ativo_id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    quantidade INT NOT NULL,
+    preco_compra FLOAT NOT NULL,
+    ultimo_dividendo FLOAT,
+    dy FLOAT,
+    data_compra DATE NOT NULL,
+    data_dividendo DATE,
+    );
+   ```
+
 
 5. **Insira um novo usuário na tabela "users" seguindo os atributos mostrados. Exemplo:**
    ```bash
