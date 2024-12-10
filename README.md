@@ -87,7 +87,7 @@ Foi desenvolvido em PHP e segue as boas práticas de desenvolvimento (utilizando
     ultimo_dividendo FLOAT,
     dy FLOAT,
     data_compra DATE NOT NULL,
-    data_dividendo DATE,
+    data_dividendo DATE
     );
    ```
 
