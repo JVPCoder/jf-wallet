@@ -1,6 +1,8 @@
 <?php
     session_start(); 
 
+    error_reporting(E_ALL ^ E_DEPRECATED);
+
     // Exemplo de rota: /transacao/listar
     // Quebramos a rota em um array
     $rota = explode('/', substr($_SERVER['REQUEST_URI'], 1));
